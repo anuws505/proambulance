@@ -11,16 +11,16 @@ import "swiper/css";
 import "swiper/css/navigation";
 
 const galleryImages = [
-  "/images/services/ambulance/corp-1.jpg",
-  "/images/services/ambulance/corp-2.jpg",
-  "/images/services/ambulance/corp-3.jpg",
-  "/images/services/ambulance/corp-4.jpg",
-  "/images/services/ambulance/corp-5.jpg",
-  "/images/services/ambulance/corp-6.jpg",
-  "/images/services/ambulance/corp-7.jpg",
+  "/images/services/safety/corp-1.jpg",
+  "/images/services/safety/corp-2.jpg",
+  "/images/services/safety/corp-3.jpg",
+  "/images/services/safety/corp-4.jpg",
+  "/images/services/safety/corp-5.jpg",
+  "/images/services/safety/corp-6.jpg",
+  "/images/services/safety/corp-7.jpg",
 ];
 
-export default function AmbulancePage() {
+export default function SafetyStandbyPage() {
   const [mainSwiper, setMainSwiper] = useState<SwiperType | null>(null);
   const [activeIndex, setActiveIndex] = useState(0);
 
@@ -28,10 +28,10 @@ export default function AmbulancePage() {
     <div className="space-y-8 py-6 font-kanit">
       <div className="border-b border-amber-500/20 pb-6">
         <span className="text-xs text-amber-400 bg-amber-500/10 border border-amber-500/30 px-3 py-1 rounded-full inline-block mb-2">
-          Ambulance Service
+          Safety Standby Service
         </span>
         <h1 className="text-2xl sm:text-4xl font-bold text-amber-300">
-          บริการรถพยาบาลฉุกเฉินระดับ ALS
+          บริการทีมปฐมพยาบาลและความปลอดภัย
         </h1>
         <p className="text-zinc-400 text-sm mt-1">
           GENERATION AMBULANCE SERVICE @ AMBULANCE THAILAND
@@ -63,7 +63,7 @@ export default function AmbulancePage() {
                 <SwiperSlide key={index} className="relative w-full h-full">
                   <Image
                     src={imgSrc}
-                    alt={`Ambulance Featured Image ${index + 1}`}
+                    alt={`Safety Standby Featured Image ${index + 1}`}
                     fill
                     sizes="(max-width: 1024px) 100vw, 50vw"
                     priority={index === 0}
@@ -109,22 +109,22 @@ export default function AmbulancePage() {
 
             <div className="space-y-4 text-zinc-300 text-sm sm:text-base leading-relaxed">
               <p>
-                ศูนย์บริการรถพยาบาลเอกชน Gen&apos;Amb ให้บริการทีมเวชกิจฉุกเฉิน
-                แพทย์ พยาบาล และนักปฏิบัติการฉุกเฉินการแพทย์ (Paramedic)
-                ในการเคลื่อนย้ายนำส่ง
-                หรือรับกลับผู้ป่วยทั้งในประเทศและต่างประเทศ
+                ศูนย์บริการรถพยาบาลเอกชน Gen&apos;Amb ให้บริการทีมปฐมพยาบาล
+                First Aid ในกิจกรรมทุกๆ กิจกรรมที่จำเป็นต้องใช้ทีมปฐมพยาบาล อาทิ
+                กีฬา คอนเสิร์ต งานเลี้ยง ปาร์ตี้ มิตติ้ง อบรม เข้าค่าย
+                ประชุมวิชาการ รับน้อง งานละคร และภาพยนตร์
               </p>
               <p>
-                ด้วยรถพยาบาลกู้ชีพชั้นสูง (Advance Life Support - ALS)
-                ที่พร้อมด้วยอุปกรณ์การแพทย์และเครื่องมือช่วยชีวิตวิกฤตมาตรฐานโรงพยาบาล
-                ดูแลและควบคุมการปฏิบัติการตลอดการเดินทาง
-                เพื่อความปลอดภัยสูงสุดของผู้ป่วยในทุกระดับอาการ
+                พร้อมทีมเจ้าหน้าที่เวชกิจทางการแพทย์ แพทย์ พยาบาล
+                พร้อมด้วยอุปกรณ์ปฐมพยาบาล รถพยาบาลระดับมาตรฐาน
+                อุปกรณ์ทางการแพทย์ที่ทันสมัย
+                และพร้อมให้บริการในทุกกิจกรรมทั่วทั้ง 77 จังหวัดประเทศไทย
               </p>
             </div>
 
             <div className="pt-4 flex flex-col items-center justify-center bg-zinc-950/80 border border-amber-500/30 rounded-xl p-6 text-center space-y-3">
               <p className="text-sm sm:text-base text-zinc-300">
-                เรียกรถพยาบาลฉุกเฉิน ตลอด 24 ชั่วโมง
+                ติดต่อรถพยาบาล คลิกโทร... 24 ชั่วโมง
               </p>
               <a
                 href="tel:0914954222"

@@ -18,27 +18,27 @@ const serviceItems = [
     href: "/services/air-ambulance",
     src: "/images/services/crop-1660126581579.jpg",
     title: "บริการเคลื่อนย้ายผู้ป่วยทางอากาศ",
-    category: "Air Ambulance Service",
+    category: "Air Ambulance Transfer Service",
   },
   {
     id: 3,
     href: "/services/medical-standby",
     src: "/images/services/crop-1660116399425.jpg",
     title: "บริการทีมแพทย์และพยาบาลประจำงาน",
-    category: "Medical Standby",
+    category: "Medical Standby Service",
   },
   {
     id: 4,
     href: "/services/safety-standby",
     src: "/images/services/crop-1660116456973.jpg",
     title: "บริการทีมปฐมพยาบาลและความปลอดภัย",
-    category: "Safety Standby",
+    category: "Safety Standby Service",
   },
 ];
 
 export default function OurService({ showTitle = true }: OurServiceProps) {
   return (
-    <section className="py-8">
+    <section className="space-y-8">
       {showTitle && (
         <div className="flex justify-between items-end mb-8">
           <div>
