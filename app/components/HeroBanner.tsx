@@ -4,7 +4,6 @@ import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
 
-// Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
@@ -51,22 +50,29 @@ export default function HeroBanner() {
       >
         {bannerImages.map((banner, index) => (
           <SwiperSlide key={index} className="relative w-full h-full">
-            {/* Background Image */}
             <Image
               src={banner.src}
               alt={banner.title}
               fill
+              sizes="100vw"
               priority={index === 0}
               className="object-cover"
             />
-            {/* Black Gradient Overlay เพื่อให้ตัวหนังสืออ่านง่าย */}
-            <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/50 to-transparent flex flex-col justify-end p-6 md:p-12 text-left">
-              <h2 className="font-chonburi text-2xl md:text-4xl text-amber-400 mb-2 drop-shadow-md">
-                {banner.title}
-              </h2>
-              <p className="font-kanit text-zinc-200 text-sm md:text-lg max-w-2xl font-light">
-                {banner.subtitle}
-              </p>
+
+            <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/70 to-transparent flex flex-col justify-end p-6 md:p-12 text-left">
+              <div className="max-w-3xl space-y-2">
+                <span className="inline-block text-[11px] sm:text-xs text-amber-400 font-kanit font-medium tracking-wider uppercase bg-zinc-900/90 border border-amber-500/50 px-3 py-1 rounded-md shadow-md">
+                  PRO AMBULANCE SERVICE
+                </span>
+
+                <h2 className="font-kanit font-bold text-2xl sm:text-3xl md:text-5xl text-amber-400 leading-tight drop-shadow-[0_2px_4px_rgba(0,0,0,0.9)] tracking-wide">
+                  {banner.title}
+                </h2>
+
+                <p className="font-kanit text-zinc-100 text-sm sm:text-base md:text-xl font-normal drop-shadow-[0_1px_2px_rgba(0,0,0,0.9)]">
+                  {banner.subtitle}
+                </p>
+              </div>
             </div>
           </SwiperSlide>
         ))}

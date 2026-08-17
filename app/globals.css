@@ -11,8 +11,7 @@
   --color-gold-500: #eab308;
   --color-gold-600: #ca8a04;
   --font-kanit: var(--font-kanit-sans);
-  --font-noto: var(--font-noto-sans);
-  --font-chonburi: var(--font-chonburi-sans);
+  --font-prompt: var(--font-prompt-sans);
 }
 
 body {
