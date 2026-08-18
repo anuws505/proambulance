@@ -1,15 +1,63 @@
 "use client";
 
 import { useState } from "react";
-import { Phone, Mail, MapPin, Globe, Send, CheckCircle2 } from "lucide-react";
+import {
+  Phone,
+  Mail,
+  MapPin,
+  Globe,
+  Send,
+  CheckCircle2,
+  Loader2,
+} from "lucide-react";
 
 export default function ContactUs() {
+  const [formData, setFormData] = useState({
+    firstName: "",
+    lastName: "",
+    phone: "",
+    email: "",
+    message: "",
+  });
+  const [loading, setLoading] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.SyntheticEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setIsSubmitted(true);
-    setTimeout(() => setIsSubmitted(false), 5000);
+    setLoading(true);
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      if (res.ok) {
+        setIsSubmitted(true);
+        setFormData({
+          firstName: "",
+          lastName: "",
+          phone: "",
+          email: "",
+          message: "",
+        });
+      } else {
+        alert("เกิดข้อผิดพลาด กรุณาลองใหม่อีกครั้ง หรือโทรติดต่อโดยตรง");
+      }
+    } catch (err) {
+      console.error(err);
+      alert("ไม่สามารถส่งข้อมูลได้ในขณะนี้");
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+  ) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
   return (
@@ -139,6 +187,9 @@ export default function ContactUs() {
                     </label>
                     <input
                       type="text"
+                      name="firstName"
+                      value={formData.firstName}
+                      onChange={handleChange}
                       required
                       placeholder="ระบุชื่อของคุณ"
                       className="w-full bg-zinc-950 border border-zinc-800 focus:border-amber-500/80 rounded-xl px-4 py-2.5 text-sm text-zinc-200 placeholder-zinc-600 focus:outline-none transition-colors"
@@ -151,6 +202,9 @@ export default function ContactUs() {
                     </label>
                     <input
                       type="text"
+                      name="lastName"
+                      value={formData.lastName}
+                      onChange={handleChange}
                       placeholder="ระบุนามสกุลของคุณ"
                       className="w-full bg-zinc-950 border border-zinc-800 focus:border-amber-500/80 rounded-xl px-4 py-2.5 text-sm text-zinc-200 placeholder-zinc-600 focus:outline-none transition-colors"
                     />
@@ -164,6 +218,9 @@ export default function ContactUs() {
                     </label>
                     <input
                       type="tel"
+                      name="phone"
+                      value={formData.phone}
+                      onChange={handleChange}
                       required
                       placeholder="เช่น 091-495-4222"
                       className="w-full bg-zinc-950 border border-zinc-800 focus:border-amber-500/80 rounded-xl px-4 py-2.5 text-sm text-zinc-200 placeholder-zinc-600 focus:outline-none transition-colors"
@@ -176,6 +233,9 @@ export default function ContactUs() {
                     </label>
                     <input
                       type="email"
+                      name="email"
+                      value={formData.email}
+                      onChange={handleChange}
                       placeholder="example@email.com"
                       className="w-full bg-zinc-950 border border-zinc-800 focus:border-amber-500/80 rounded-xl px-4 py-2.5 text-sm text-zinc-200 placeholder-zinc-600 focus:outline-none transition-colors"
                     />
@@ -189,6 +249,9 @@ export default function ContactUs() {
                   </label>
                   <textarea
                     rows={4}
+                    name="message"
+                    value={formData.message}
+                    onChange={handleChange}
                     required
                     placeholder="ระบุรายละเอียดบริการที่ต้องการสอบถาม หรือขอใบเสนอราคา..."
                     className="w-full bg-zinc-950 border border-zinc-800 focus:border-amber-500/80 rounded-xl px-4 py-2.5 text-sm text-zinc-200 placeholder-zinc-600 focus:outline-none transition-colors resize-none"
@@ -197,10 +260,20 @@ export default function ContactUs() {
 
                 <button
                   type="submit"
-                  className="gold-button w-full py-3.5 rounded-xl flex items-center justify-center gap-2 font-bold shadow-lg hover:scale-[1.01] transition-transform"
+                  disabled={loading}
+                  className="gold-button w-full py-3.5 rounded-xl flex items-center justify-center gap-2 font-bold shadow-lg hover:scale-[1.01] transition-transform disabled:opacity-50 disabled:cursor-not-allowed"
                 >
-                  <Send size={18} />
-                  <span>ส่งข้อความติดต่อ</span>
+                  {loading ? (
+                    <>
+                      <Loader2 size={18} className="animate-spin" />
+                      <span>กำลังส่งข้อความ...</span>
+                    </>
+                  ) : (
+                    <>
+                      <Send size={18} />
+                      <span>ส่งข้อความติดต่อ</span>
+                    </>
+                  )}
                 </button>
               </form>
             )}
