@@ -212,14 +212,14 @@ export default function ContactUs() {
         <div className="flex items-center justify-between">
           <h2 className="text-xl font-bold text-amber-300">แผนที่การเดินทาง</h2>
           <span className="text-xs text-zinc-400">
-            เขตวังทองหลาง กรุงเทพมหานคร
+            อ.บางบัวทอง จ.นนทบุรี 11110
           </span>
         </div>
 
         <div className="relative w-full h-[350px] sm:h-[450px] rounded-2xl overflow-hidden border border-amber-500/30 bg-zinc-900 shadow-2xl">
           <iframe
-            title="Pro Ambulance Location Map"
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3875.267672102834!2d100.5983333!3d13.7825000!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTPCsDQ2JzE3LjAiTiAxMDDCsDM1JzU0LjAiRQ!52e0!3m2!1sth!2sth!4v1700000000000!5m2!1sth!2sth"
+            title="Pro Ambulance Location Map - บางบัวทอง นนทบุรี"
+            src="https://maps.google.com/maps?q=60%20%E0%B8%2B%20%E0%B8%2B%20%E0%B8%95%E0%B8%BB%E0%B8%A5%E0%B8%B2%E0%B8%87%E0%B8%A3%E0%B8%B1%E0%B8%81%E0%B8%9E%E0%B8%B3%E0%B8%92%E0%B8%99%E0%B8%B2%20%E0%B8%B3%E0%B9%80%E0%B8%A0%E0%B8%AD%E0%B8%9A%E0%B8%B2%E0%B8%87%E0%B8%9A%E0%B8%B1%E0%B8%A7%E0%B8%97%E0%B8%AD%E0%B8%87%20%E0%B8%88%E0%B8%B1%E0%B8%87%E0%B8%AB%E0%B8%A7%E0%B8%B1%E0%B8%94%E0%B8%99%E0%B8%99%E0%B8%97%E0%B8%9A%E0%B8%B8%E0%B8%A3%E0%B8%B5%2011110&t=&z=15&ie=UTF8&iwloc=&output=embed"
             width="100%"
             height="100%"
             style={{ border: 0, filter: "grayscale(0.2) contrast(1.1)" }}
