@@ -38,20 +38,20 @@ const serviceItems = [
 
 export default function OurService({ showTitle = true }: OurServiceProps) {
   return (
-    <section className="space-y-8">
+    <section className="space-y-8 font-kanit">
       {showTitle && (
         <div className="flex justify-between items-end mb-8">
           <div>
-            <h2 className="font-kanit text-2xl md:text-3xl gold-text-gradient">
-              บริการและการปฏิบัติงาน
+            <h2 className="text-2xl md:text-3xl gold-text-gradient">
+              งานบริการของเรา
             </h2>
-            <p className="font-kanit text-zinc-400 text-sm mt-1">
-              ภาพบรรยากาศการปฏิบัติงานจริงของทีมงาน Pro Ambulance
+            <p className="text-zinc-400 text-sm mt-1">
+              ภาพบรรยากาศและงานบริการของเรา Pro Ambulance
             </p>
           </div>
           <Link
             href="/services"
-            className="hidden sm:inline-block font-kanit text-amber-400 hover:text-amber-300 text-sm underline underline-offset-4"
+            className="hidden sm:inline-block text-amber-400 hover:text-amber-300 text-sm underline underline-offset-4"
           >
             ดูทั้งหมด →
           </Link>
@@ -76,7 +76,7 @@ export default function OurService({ showTitle = true }: OurServiceProps) {
               <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-80 group-hover:opacity-90 transition-opacity" />
             </div>
 
-            <div className="absolute bottom-0 left-0 right-0 p-3 sm:p-4 font-kanit">
+            <div className="absolute bottom-0 left-0 right-0 p-3 sm:p-4">
               <span className="text-[10px] sm:text-xs text-amber-400 bg-amber-500/10 border border-amber-500/30 px-2 py-0.5 rounded-full inline-block mb-1">
                 {item.category}
               </span>
@@ -91,7 +91,7 @@ export default function OurService({ showTitle = true }: OurServiceProps) {
       <div className="mt-6 text-center sm:hidden">
         <Link
           href="/services"
-          className="font-kanit text-amber-400 hover:text-amber-300 text-sm underline underline-offset-4"
+          className="text-amber-400 hover:text-amber-300 text-sm underline underline-offset-4"
         >
           ดูงานบริการทั้งหมด →
         </Link>
