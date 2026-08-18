@@ -30,7 +30,15 @@ export default function Footer() {
               </a>
             </li>
             <li>
-              Line ID: <span className="text-amber-300">ems_4222</span>
+              Line ID:{" "}
+              <a
+                href="https://line.me/R/ti/p/~ems_4222"
+                target="_blank"
+                rel="noreferrer"
+                className="text-amber-300 font-bold hover:underline hover:text-amber-400 transition-colors"
+              >
+                ems_4222
+              </a>
             </li>
             <li>
               Email:{" "}
