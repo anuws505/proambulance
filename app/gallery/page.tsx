@@ -1,4 +1,10 @@
+import type { Metadata } from "next";
 import OurWork from "../components/OurWork";
+
+export const metadata: Metadata = {
+  title: "Pro Ambulance Service - ผลงานการปฏิบัติงาน",
+  description: "ภาพบรรยากาศการปฏิบัติงานจริงของทีมงาน Pro Ambulance",
+};
 
 export default function GalleryPage() {
   return (

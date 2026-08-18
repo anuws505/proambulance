@@ -1,4 +1,10 @@
+import type { Metadata } from "next";
 import AboutUs from "../components/AboutUs";
+
+export const metadata: Metadata = {
+  title: "Pro Ambulance Service - เกี่ยวกับเรา",
+  description: "รู้จักเราทีม Ambulance Pro",
+};
 
 export default function AboutPage() {
   return (
