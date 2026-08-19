@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Phone, MessageCircle, Share2, MessageSquare } from "lucide-react";
+import { Phone, MessageCircle, Share2, MessageSquare, X } from "lucide-react";
 
 export default function FloatingSocial() {
   const [isOpen, setIsOpen] = useState(false);
@@ -19,7 +19,7 @@ export default function FloatingSocial() {
           </a>
 
           <a
-            href="https://line.me"
+            href="https://line.me/R/ti/p/~ems_4222"
             target="_blank"
             rel="noreferrer"
             className="flex items-center gap-2 bg-[#06C755] text-white p-3 rounded-full font-kanit font-bold text-sm shadow-xl hover:opacity-90 transition-transform hover:scale-105"
@@ -39,7 +39,7 @@ export default function FloatingSocial() {
           </a>
 
           <a
-            href="https://m.me/yourfacebookpage"
+            href="https://m.me/proambulancethailand"
             target="_blank"
             rel="noreferrer"
             className="flex items-center gap-2 bg-[#0084FF] text-white p-3 rounded-full font-kanit font-bold text-sm shadow-xl hover:opacity-90 transition-transform hover:scale-105"
@@ -55,7 +55,7 @@ export default function FloatingSocial() {
         className="w-14 h-14 bg-amber-500 text-black rounded-full flex items-center justify-center shadow-2xl hover:bg-amber-400 transition-transform active:scale-95"
         aria-label="ติดต่อเรา"
       >
-        <MessageSquare size={26} />
+        {isOpen ? <X size={26} /> : <MessageSquare size={26} />}
       </button>
     </div>
   );
