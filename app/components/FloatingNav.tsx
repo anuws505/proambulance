@@ -26,9 +26,9 @@ export default function FloatingNav() {
           <Link
             key={item.href}
             href={item.href}
-            className="group relative flex items-center justify-center w-12 h-12 bg-zinc-900/90 border border-amber-500/30 hover:border-amber-400 text-amber-400 rounded-full shadow-lg backdrop-blur-md transition-all hover:scale-110"
+            className="group relative flex items-center justify-center w-14 h-14 bg-zinc-900/90 border border-amber-500/30 hover:border-amber-400 text-amber-400 rounded-full shadow-lg backdrop-blur-md transition-all hover:scale-110"
           >
-            <Icon size={20} />
+            <Icon size={22} />
             <span className="absolute right-14 bg-zinc-900 text-amber-300 font-kanit text-xs px-3 py-1.5 rounded-md border border-amber-500/20 whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none shadow-md">
               {item.label}
             </span>
